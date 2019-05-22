@@ -177,7 +177,7 @@ create table user_point_history
     "data": {
         "total_point": 3,
         "basic_point": 2,
-        "bonus_point": 2
+        "bonus_point": 1
     }
 }
 ```
