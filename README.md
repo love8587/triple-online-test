@@ -9,7 +9,9 @@
 ## 서버 구동시 명령어
 ------------------
 ```npm install```
+
 ```npm install -g nodemon```
+
 ```DEBUG=triple-online-test* nodemon server.js```
 
 ------------------
@@ -65,7 +67,6 @@
 
 - 포인트 조회 (포인트 합계 조회)
 ```
-
 if (validate userId) then
   QUERY (SELECT SUM point) in POINT_HISTORY_TABLE by userId
   return success 200 { total_point, basic_point, bonus_point }
@@ -74,7 +75,7 @@ else
 ```
 
 - 포인트 조회 (포인트 내역 조회)
-```text
+```
 if (validate userId) then
   QUERY (SELECT *) in POINT_HISTORY_TABLE by userId with pagination
   return success 200 {list, count}
@@ -94,8 +95,7 @@ create table review_point_history
 	updated_at timestamp default CURRENT_TIMESTAMP null,
 	constraint review_point_place_place_id_uindex
 		unique (place_id)
-)
-;
+);
 
 create table user_point_history
 (
@@ -108,13 +108,11 @@ create table user_point_history
 	reason_id varchar(55) null,
 	created_at timestamp default CURRENT_TIMESTAMP null,
 	updated_at timestamp default CURRENT_TIMESTAMP null
-)
-;
-
+);
 ```
 
 ## API
-```
+```http
 /points?userId=3ede0ef2-92b7-4817-a5f3-0c575361f745
 
 {
@@ -168,7 +166,7 @@ create table user_point_history
 }
 ```
 
-```
+```http
 /points/histories?userId=3ede0ef2-92b7-4817-a5f3-0c575361f745
 
 {
