@@ -116,5 +116,68 @@ create table user_point_history
 ## API
 ```
 /points?userId=3ede0ef2-92b7-4817-a5f3-0c575361f745
+
+{
+    "statusCode": 200,
+    "message": "GET User Point",
+    "data": {
+        "list": [
+            {
+                "id": 63,
+                "user_id": "3ede0ef2-92b7-4817-a5f3-0c575361f745",
+                "basic_point": -1,
+                "bonus_point": 0,
+                "reason_type": "review",
+                "reason_id": "240a0658-dc5f-4878-9381-ebb7b2667772",
+                "created_at": "2019-05-22 16:00:20",
+                "updated_at": "2019-05-22 16:00:20"
+            },
+            {
+                "id": 62,
+                "user_id": "3ede0ef2-92b7-4817-a5f3-0c575361f745",
+                "basic_point": -1,
+                "bonus_point": 0,
+                "reason_type": "review",
+                "reason_id": "240a0658-dc5f-4878-9381-ebb7b2667772",
+                "created_at": "2019-05-22 16:00:09",
+                "updated_at": "2019-05-22 16:00:09"
+            },
+            {
+                "id": 61,
+                "user_id": "3ede0ef2-92b7-4817-a5f3-0c575361f745",
+                "basic_point": 2,
+                "bonus_point": 0,
+                "reason_type": "review",
+                "reason_id": "240a0658-dc5f-4878-9381-ebb7b2667772",
+                "created_at": "2019-05-22 15:59:59",
+                "updated_at": "2019-05-22 15:59:59"
+            },
+            {
+                "id": 60,
+                "user_id": "3ede0ef2-92b7-4817-a5f3-0c575361f745",
+                "basic_point": 2,
+                "bonus_point": 1,
+                "reason_type": "review",
+                "reason_id": "340a0658-dc5f-4878-9381-ebb7b2667772",
+                "created_at": "2019-05-22 15:59:55",
+                "updated_at": "2019-05-22 15:59:55"
+            }
+        ],
+        "count": 4
+    }
+}
+```
+
+```
 /points/histories?userId=3ede0ef2-92b7-4817-a5f3-0c575361f745
+
+{
+    "statusCode": 200,
+    "message": "GET User Point",
+    "data": {
+        "total_point": 3,
+        "basic_point": 2,
+        "bonus_point": 2
+    }
+}
 ```
