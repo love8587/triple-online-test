@@ -33,7 +33,7 @@ module.exports = [
       return response.success(200, `GET User Point`, {
         total_point: basicPoint + bonusPoint,
         basic_point: basicPoint,
-        bonus_point: basicPoint
+        bonus_point: bonusPoint
       })
     }
   }
