@@ -36,23 +36,29 @@
 ```
   find given review point by review_id (기지급된 리뷰 포인트 조회)
   find given review place by review_id, pace_id (포인트 기지급된 장소 조회)
+
   START Calcurate (current_review_event, given_point, given_place)
     basic_point, bonus_point = 0 (현재 리뷰 데이터에 대한 포인트 계산)
 
     if (has text): (텍스트가 첨부된 경우)
       basic_point += 1  (기본 점수 +1)
+
     if (has photo): (사진이 포함된 경우)
       basic_point += 1  (기본 점수 +1)
 
     case (action === ADD):
       if (is first place): (장소에 첫리뷰인경우)
         bonus_point += 1   (보너스 점수 +1)
+
     case (action === MOD):
       basic_point = basic_point - SUM(given_point) (현재 리뷰포인트-기지급된 포인트 합계)
+
     case (action === DEL):
       basic_point = 0 - SUM(given_point.basic_point) (기지급된 포인트 합계 회수)
       bonus_point = 0 - SUM(given_point.bonus_point) (기지급된 포인트 합계 회수)
+
     return { basic_point, bonus_point }
+
   END Calcurate
   
   SAVE DB user_point_history (변경된 포인트 내역 저장)
