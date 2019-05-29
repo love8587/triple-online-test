@@ -31,11 +31,14 @@ module.exports = [
         orderBy: request.query.sortBy ? request.query.sortBy.split('.')[1] : 'desc'
       }
 
-      const userPoint = await PointServiceInst.getAllPointHistory(wheres, pagination)
+      debug('wheres ============> ', wheres)
+      debug('pagination ============> ', pagination)
+
+      const pointHistories = await PointServiceInst.getAllPointHistory(wheres, pagination)
 
       return response.success(200, `GET User Point`, {
-        list: userPoint,
-        count: userPoint.length
+        list: pointHistories,
+        count: pointHistories.length
       })
     }
   }

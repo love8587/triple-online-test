@@ -1,5 +1,4 @@
 const debug = require('debug')('triple-online-test:controllers:events:post')
-const Boom = require('boom')
 const response = require('api/helpers/response')
 const ReviewPointSubscriber = require('api/services/event-subscribers/review-point')
 
@@ -36,6 +35,8 @@ module.exports = [
         if (!subs) return
         subs.update(event) // error는 각 subscriber에서 처리
       })
+
+      debug('subscribers ============> ', subscribers)
 
       // Save the event to DB
       let eventId = 'created-new-event-id'

@@ -28,10 +28,9 @@ class ReviewPointSubscriber {
     let givenReviewPoint = await this.findGivenReviewPoint(event.reviewId)
     let givenPointPlace = await this.ReviewPointPlaceService.getPointPlace(event.placeId)
 
-    debug('givenReviewPoint ============> ', givenReviewPoint)
-    debug('givenPointPlace ============> ', givenPointPlace)
+    debug('givenReviewPoint, givenPointPlace ============> ', givenReviewPoint, givenPointPlace)
     let point = this.Calcurator.calcurate(event, givenReviewPoint, givenPointPlace)
-    debug('point ============> ', point)
+    debug(' point ============> ', point)
 
     if (point.totalPoint === 0 && point.totalBonus === 0) {
       return
@@ -43,10 +42,12 @@ class ReviewPointSubscriber {
     }, point)
 
     if (event.action.toUpperCase() === 'ADD' && point.totalBonus > 0) {
+      debug('place 보너스 포인트 지급')
       await this.ReviewPointPlaceService.addReviewPointPlace(event.reviewId, event.placeId)
     }
 
     if (event.action.toUpperCase() === 'DELETE' && point.totalBonus < 0) {
+      debug('place 보너스 포인트 회수')
       await this.ReviewPointPlaceService.deleteReviewPointPlace(event.reviewId, event.placeId)
     }
   }

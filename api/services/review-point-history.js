@@ -1,4 +1,4 @@
-const debug = require('debug')('triple-online-test:services:review-point-history')
+// const debug = require('debug')('triple-online-test:services:review-point-history')
 const queries = require('api/db/queries/review-point-history')
 
 /**

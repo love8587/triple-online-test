@@ -1,4 +1,4 @@
-const debug = require('debug')('triple-online-test:services:point-service')
+// const debug = require('debug')('triple-online-test:services:point-service')
 const queries = require('../db/queries/point-history.js')
 
 class PointService {

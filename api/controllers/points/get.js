@@ -24,11 +24,12 @@ module.exports = [
         userId: userId || null
       }
 
+      debug('wheres ============> ', wheres)
       // DB용량이 늘어나거나 유저당 포인트증감이 많아지면 이 부분을 user_point 테이블로 최적화 진행
       // 차후에 Redis도 고려해볼 수 있음
       const userPoint = await PointServiceInst.getTotalPoint(wheres)
-      let basicPoint = Number.parseInt(userPoint[0]['basic_point'])
-      let bonusPoint = Number.parseInt(userPoint[0]['bonus_point'])
+      let basicPoint = Number.parseInt(userPoint[0]['basic_point']) || 0
+      let bonusPoint = Number.parseInt(userPoint[0]['bonus_point']) || 0
 
       return response.success(200, `GET User Point`, {
         total_point: basicPoint + bonusPoint,

@@ -5,6 +5,7 @@ const BONUS_POINT_FOR_FIRST_PLACE = 1
 
 class ReviewPointCalcurator {
   calcurate (event, givenPoint, givenPlace) {
+    debug('event,givenPoint,givenPlace ============> ', event, givenPoint, givenPlace)
     let totalPoint = 0
     let totalBonus = 0
 
