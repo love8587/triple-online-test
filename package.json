@@ -9,7 +9,7 @@
         "app-module-path": "^2.2.0",
         "blipp": "^3.1.2",
         "boom": "^7.3.0",
-        "config": "^3.0.1",
+        "config": "^3.3.8",
         "hapi": "^18.1.0",
         "hapi-alive": "^2.0.0",
         "hapi-auto-route": "^2.0.4",
